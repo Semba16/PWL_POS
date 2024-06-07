@@ -3,22 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Debug\VirtualRequestStack;
 
 class AdminController extends Controller
 {
     public function index()
-    {
-        $breadcrumb = (object) [
-            'title' => 'Admin',
-            'list' => ['Home', 'Admin']
-        ];
-
-        $page = (object)[
-            'title' => 'Daftar admin yang terdaftar dalam sistem'
-        ];
-
-        $activeMenu = 'admin';
-
-        return view('admin', ['breadcrumb' => $breadcrumb, 'page' => $page, 'activeMenu' => $activeMenu]);
+    {     
+            return view('admin');
     }
 }

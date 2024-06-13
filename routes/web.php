@@ -11,8 +11,12 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\FileUploadController;
+use Faker\Core\File;
 
 Route::get('/', [WelcomeController::class, 'index']);
+
+Route::get('/file-upload', [FileUploadController::class, 'fileupload']);
+Route::post('/file-upload', [FileUploadController::class, 'prosesfileupload']);
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/proses_login', [AuthController::class, 'proses_login'])->name('proses_login');
